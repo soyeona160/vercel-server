@@ -1,6 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose")
 const app = express();
+const dotenv = require('dotenv')
+
+dotenv.config({ path: '../.env' })
+
+console.log(process.env)
 
 console.log("몽고아틀라스 주소: ", process.env.MONGODB_URI)
 mongoose.connect(process.env.MONGODB_URI)
